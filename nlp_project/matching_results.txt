@@ -1,0 +1,5 @@
+Resume: sample_resume.pdf
+Skills: 
+Locations: south east asia, north asia
+Experience_years: 2, 3, 5, 5, 5, 5, 3
+

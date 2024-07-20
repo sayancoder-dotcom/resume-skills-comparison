@@ -1,0 +1,7 @@
+streamlit
+fitz
+transformers
+langdetect
+pandas
+matplotlib
+docx
