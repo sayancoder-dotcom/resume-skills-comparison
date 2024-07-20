@@ -1,7 +1,8 @@
-PyMuPDF
-langdetect
-transformers
 streamlit
+fitz
+transformers
+torch
+langdetect
+python-docx
 pandas
 matplotlib
-docx

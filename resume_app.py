@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import streamlit as st
 
 # Initialize translation pipeline
-translator = pipeline("translation", model="Helsinki-NLP/opus-mt-en-de")
+translator = pipeline("translation", model="Helsinki-NLP/opus-mt-mul-en")
 
 # Define function to read PDF and extract text
 def extract_text_from_pdf(uploaded_file):
@@ -37,6 +37,7 @@ def clean_text(text):
 
 # Define function to extract skills from resume text
 def extract_skills(text, skills):
+    # Convert text to lowercase for case-insensitive matching
     text_lower = text.lower()
     skill_counts = {skill: text_lower.count(skill.lower()) for skill in skills}
     return skill_counts
