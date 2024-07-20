@@ -8,7 +8,12 @@ import matplotlib.pyplot as plt
 import streamlit as st
 
 # Initialize translation pipeline with a different model
-translator = pipeline("translation", model="Helsinki-NLP/opus-mt-en-fr", device=-1)
+try:
+    translator = pipeline("translation", model="Helsinki-NLP/opus-mt-en-fr", device=-1)
+    st.write("Translation pipeline initialized successfully.")
+except Exception as e:
+    st.error(f"Error initializing translation pipeline: {e}")
+    translator = None
 
 # Define function to read PDF and extract text
 def extract_text_from_pdf(uploaded_file):
@@ -23,9 +28,13 @@ def extract_text_from_pdf(uploaded_file):
 # Define function to detect language and translate text if necessary
 def detect_and_translate(text):
     lang = detect(text)
-    if lang != "en":
-        translated_text = translator(text)[0]['translation_text']
-        return translated_text, lang
+    if lang != "en" and translator:
+        try:
+            translated_text = translator(text)[0]['translation_text']
+            return translated_text, lang
+        except Exception as e:
+            st.error(f"Error during translation: {e}")
+            return text, lang
     return text, lang
 
 # Define function to clean up text
