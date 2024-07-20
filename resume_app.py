@@ -7,8 +7,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import streamlit as st
 
-# Initialize translation pipeline
-translator = pipeline("translation", model="Helsinki-NLP/opus-mt-mul-en")
+# Initialize translation pipeline with a different model
+translator = pipeline("translation", model="Helsinki-NLP/opus-mt-en-fr", device=-1)
 
 # Define function to read PDF and extract text
 def extract_text_from_pdf(uploaded_file):

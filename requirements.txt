@@ -1,8 +1,6 @@
-streamlit
-fitz
-transformers
-torch
+transformers>=4.27.0
+torch>=2.0.0
 langdetect
 python-docx
-pandas
 matplotlib
+pymupdf
