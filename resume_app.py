@@ -7,6 +7,14 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import streamlit as st
 
+# Inject the meta tag into the HTML
+st.markdown(
+    """
+    <meta name="google-adsense-account" content="ca-pub-3075073753451202">
+    """,
+    unsafe_allow_html=True
+)
+
 # Initialize translation pipeline with a different model
 try:
     translator = pipeline("translation", model="Helsinki-NLP/opus-mt-en-fr", device=-1)
