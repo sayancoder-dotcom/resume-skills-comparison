@@ -10,7 +10,7 @@ import streamlit as st
 # Initialize translation pipeline with a different model
 try:
     translator = pipeline("translation", model="Helsinki-NLP/opus-mt-en-fr", device=-1)
-    # st.write("Translation pipeline initialized successfully.")
+    # st.write("Translation pipeline initialized successfully.")  # Comment out this line
 except Exception as e:
     st.error(f"Error initializing translation pipeline: {e}")
     translator = None
