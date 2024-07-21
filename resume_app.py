@@ -7,15 +7,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import streamlit as st
 
-# Inject the AdSense script into the HTML
-st.markdown(
-    """
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3075073753451202"
-            crossorigin="anonymous"></script>
-    """,
-    unsafe_allow_html=True
-)
-
 # Initialize translation pipeline with a different model
 try:
     translator = pipeline("translation", model="Helsinki-NLP/opus-mt-en-fr", device=-1)
